@@ -154,7 +154,7 @@ const Main = () => {
                     </div>
 
                     <div>
-                        <button className={`btn ${styles.generate_btn}`} onClick={generatePassword}>
+                        <button className={`btn ${styles.generate_btn}`} onClick={handleGeneratePassword}>
                             GENERATE
                         </button>
                     </div>
