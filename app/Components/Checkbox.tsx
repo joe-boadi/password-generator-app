@@ -4,7 +4,7 @@ const CheckBox = (props: any) => {
 
     return(
         <>
-            <input type="checkbox" checked={value} onChange={onChange} />
+            <input placeholder="" type="checkbox" checked={value} onChange={onChange} />
         </>
     )
 
