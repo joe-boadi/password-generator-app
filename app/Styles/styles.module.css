@@ -1,0 +1,132 @@
+div#root {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    font-family: "JetBrains Mono", monospace;
+    background-color: #18171F;
+    color:#E6E5EA;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper_box {
+    padding: 30px;
+}
+
+.container {
+    background-color: #24232C;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.requirement_box{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+  
+.page_font {
+    font-optical-sizing: auto;
+  }
+  
+  .text_color{
+      color: #E6E5EA;
+  }
+  
+  .page_theme{
+      color: #A4FFAF;
+  }
+  
+  .input{
+      font-family: "JetBrains Mono", monospace;
+      border: none;
+      background: #24242C;
+      width:540px;
+      height: 80px;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+  }
+  
+  .input_text{
+      font-family: "JetBrains Mono", monospace;
+      opacity: 30%;
+      width: 173px;
+      height: 42px;
+      font-size: 100%;
+      text-align: left;
+  }
+  
+  .input_icon {
+      color: #A4FFAF;
+      cursor: pointer;
+  }
+  
+  .input_icon:hover {
+      color: #E6E5EA;
+  }
+  
+  .slider_color{
+      background-color: #A4FFAF;
+  }
+  
+  .slider_icon{
+      background-color: #E6E5EA;
+      cursor: pointer;
+  }
+  
+  .slider_value {
+      width: 39px;
+      height: 42px;
+  }
+  
+  .slider_icon:hover{
+      background-color: #24242C;
+      border: 1px solid #A4FFAF;
+  }
+  
+  .checkbox {
+      border: 1px solid #E6E5EA;
+      background-color:#24242C
+  }
+  .checkbox:checked{
+      background-color: #A4FFAF;
+      color: #24242C;
+  }
+  
+  .generate_btn{
+      background-color: #A4FFAF;
+      cursor: pointer;
+      color: #24242C;;
+      width: 476px;
+      height: 65px;
+      border-radius: 0;
+  }
+  
+  .generate_btn:hover{
+      background-color: #24242C;
+      border: 1px solid #A4FFAF;
+      color:#A4FFAF
+  }
+   
+  @media (max-width: 600px){/*small screens -> 768px*/
+  
+      .button{
+          width: 311px;
+          height: 56px;
+      }
+  
+      .input{
+          width: 343px;
+          height: 64px;
+      }
+  
+      .slider_value {
+          width: 29px;
+          height: 32px;
+      }
+  }
