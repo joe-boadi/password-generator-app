@@ -63,7 +63,7 @@ const Main = () => {
         <div className={`${styles.wrapper} ${styles.wrapper_box}`}>
             <h1 className={`${styles.h1_text} text-center justify-center p-3 m-3`}>Password Generator</h1>
             <div className={`${styles.container}`}>
-                <div className="password_box">
+                <div className={`${styles.password_box}`}>
                     <div className="relative">
                         <input 
                                 type="text"
@@ -71,12 +71,12 @@ const Main = () => {
                                 placeholder="P4$5W0rD!"
                                 value={handleText}
                                 onChange = {(e) => setHandleText(e.target.value)} 
-                                className={styles.input}
+                                className={`${styles.input} ${styles.input_text} pl-6 pr-10 left-4`}
                         />
                         <button
                             type="button"
                             title=""
-                            className={`${styles.input_icon} right-0`}
+                            className={`${styles.input_icon} absolute right-4 top-1/2 transform -translate-y-1/2 px-4 py-2`}
                             onClick={() => {
                                 if (handleText.length > 0) {
                                     navigator.clipboard.writeText(handleText);
@@ -86,15 +86,15 @@ const Main = () => {
                                     }, 2000);
                                 }
                                 }}>
-                            <i className={`${styles.input_icon}`}><FaRegCopy /> {copied ? 'COPIED' : ''}</i>
+                            <i className={`${styles.input_icon} ${styles.page_theme} text-2xl space-x-2`}><FaRegCopy /> {copied ? 'COPIED' : ''}</i>
                         </button>
                     </div>
-                        <div>
-                        <div className={`${styles.requirement_box}`}>
-                            <div className="grid grid-cols-2 p-2">
+                    <span className={`${styles.span_division} m-5`}> </span>
+                        <div className={`${styles.requirement_box} ${styles.range_container}`}>
+                            <div className={`${styles.label_container} pl-7`}>
                                 <label htmlFor="">Character Length</label><span className={`${styles.page_theme} ${styles.characterNo} `}>0</span>
                             </div>
-                            <div className="">
+                            <div className="pl-7">
                                 <input type="range"
                                     name="" 
                                     id=""
@@ -102,59 +102,63 @@ const Main = () => {
                                     max={15} 
                                     value={passwordGen.length}
                                     onChange={(e) => setPasswordLength(e.target.value)}
-                                    className={`${styles.slider_color}`}
+                                    className={`${styles.slider_color} ${styles.range_input}`}
                                 />
                             </div>
                         </div>
-
-                        <div className={`${styles.requirement_box}`}>
+                        <div className="flex flex-col space-y-2 pl-7">
+                        <div className={`${styles.requirement_box} flex items-center`}>
                             <div>
                                 <Checkbox 
                                     value={passwordGen.uppercaseLetters}
                                     onChange={handleChangeUppercase}
+                                    className="mr-2"
                                 />
                             </div>
-                            <div>
+                            <div className="pl-4">
                                 <label htmlFor="">Include Uppercase Letters</label>
                             </div>
                         </div>
 
-                        <div className={`${styles.requirement_box}`}>
+                        <div className={`${styles.requirement_box} flex items-center`}>
                             <div>
                                 <Checkbox 
                                     value={passwordGen.lowercaseLetters}
                                     onChange={handleChangeLowercase}
+                                    className="mr-2"
                                 />
                             </div>
-                            <div>
+                            <div className="pl-4">
                                 <label htmlFor="">Include Lowercase Letters</label>
                             </div>
                         </div>
 
-                        <div className={`${styles.requirement_box}`}>
+                        <div className={`${styles.requirement_box} flex items-center`}>
                             <div>
                                 <Checkbox
                                     value={passwordGen.numbers}
                                     onChange={handleChangeNumbers}
+                                    className="mr-2"
                                 />
                             </div>
-                            <div>
+                            <div className="pl-4">
                                 <label htmlFor="">Include Numbers</label>
                             </div>
                         </div>
 
-                        <div className={`${styles.requirement_box}`}>
+                        <div className={`${styles.requirement_box} flex items-center`}>
                             <div>
                                 <Checkbox
                                     value={passwordGen.symbols}
                                     onChange={handleChangeSymbols}
+                                    className="mr-2"
                                 />
                             </div>
-                            <div>
+                            <div className="pl-4">
                                 <label htmlFor="">Include Symbols</label>
                             </div>
                         </div>
-                    </div>
+                        </div>
                     <div>
                         <button className={`btn ${styles.generate_btn} justify-center text-center p-3 m-4`} onClick={handleGeneratePassword}>
                             GENERATE <span>
