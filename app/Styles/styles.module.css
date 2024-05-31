@@ -2,6 +2,7 @@ div#root {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: #18171F;
 }
 
 .wrapper {
@@ -10,6 +11,7 @@ div#root {
     color:#E6E5EA;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -19,9 +21,45 @@ div#root {
 
 .container {
     background-color: #24232C;
-    width: 400px;
+    width: 540px;
+    height: 632px;
     max-width: 100%;
     margin: 0 auto;
+}
+
+.h1_text{
+    font-family: "JetBrains Mono", monospace;
+    background-color: #18171F;
+    color: #E6E5EA;
+    margin-bottom: 20px;
+}
+
+.input{
+    font-family: "JetBrains Mono", monospace;
+    border: none;
+    background: #24242C;
+    width:540px;
+    height: 80px;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.input_text{
+    font-family: "JetBrains Mono", monospace;
+    opacity: 30%;
+    width: 173px;
+    height: 42px;
+    font-size: 100%;
+    text-align: left;
+}
+
+.input_icon {
+    color: #A4FFAF;
+    cursor: pointer;
+}
+
+.input_icon:hover {
+    color: #E6E5EA;
 }
 
 .requirement_box{
@@ -29,10 +67,53 @@ div#root {
     justify-content: space-between;
     padding: 10px 0px;
 }
-  
-.page_font {
-    font-optical-sizing: auto;
-  }
+
+.requirement_box label{
+    font-weight: 500;
+}
+
+.requirement_box input[type="range"]{
+    --webkit-appearance: none;
+    background: #18171F;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    outline: none;
+    border-radius: 0;
+}
+
+.requirement_box input[type="range"]::--webkit-slider-runnable-track {
+    cursor: pointer;
+    width: 100%;
+    background: #A4FFAF;
+}
+
+.requirement_box input[type="range"]::--webkit-slider-thumb {
+    cursor: pointer;
+    width: 100%;
+    background-color: #18171F;
+    border: 1px solid #A4FFAF;
+    border-radius: 50%;
+    margin-top: -5.5px;
+}
+
+.requirement_box input[type="range"]:hover{
+    cursor: pointer;
+}
+
+.requirement_box input[type="checkbox"] {
+    color:#24232C;
+    background-color: #A4FFAF;
+}
+
+.characterNo {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 100%S;
+    width: 39px;
+    height: 42px;
+    color: #A4FFAF;
+    margin-bottom: 20px;
+}
   
   .text_color{
       color: #E6E5EA;
@@ -42,36 +123,9 @@ div#root {
       color: #A4FFAF;
   }
   
-  .input{
-      font-family: "JetBrains Mono", monospace;
-      border: none;
-      background: #24242C;
-      width:540px;
-      height: 80px;
-      font-size: 1.875rem;
-      line-height: 2.25rem;
-  }
-  
-  .input_text{
-      font-family: "JetBrains Mono", monospace;
-      opacity: 30%;
-      width: 173px;
-      height: 42px;
-      font-size: 100%;
-      text-align: left;
-  }
-  
-  .input_icon {
-      color: #A4FFAF;
-      cursor: pointer;
-  }
-  
-  .input_icon:hover {
-      color: #E6E5EA;
-  }
-  
   .slider_color{
       background-color: #A4FFAF;
+      width: 100%;
   }
   
   .slider_icon{
@@ -114,8 +168,13 @@ div#root {
   }
    
   @media (max-width: 600px){/*small screens -> 768px*/
+
+     .container{
+          width: 343px;
+          height: 540px;
+      }
   
-      .button{
+      .generate_btn{
           width: 311px;
           height: 56px;
       }
