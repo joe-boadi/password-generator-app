@@ -60,11 +60,11 @@ const Main = () => {
 
 
     return (
-        <div className={`${styles.wrapper} ${styles.wrapper_box}`}>
+        <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4`}>
             <h1 className={`${styles.h1_text} text-center justify-center p-3 m-3`}>Password Generator</h1>
             <div className={`${styles.container}`}>
                 <div className={`${styles.password_box}`}>
-                    <div className="relative">
+                    <div className="relative mb-5">
                         <input 
                                 type="text"
                                 autoComplete="off"
@@ -89,83 +89,87 @@ const Main = () => {
                             <i className={`${styles.input_icon} ${styles.page_theme} text-2xl space-x-2`}><FaRegCopy /> {copied ? 'COPIED' : ''}</i>
                         </button>
                     </div>
-                    <span className={`${styles.span_division} m-5`}> </span>
+
+                    <div className={`${styles.second_container} mb-5`}>
                         <div className={`${styles.requirement_box} ${styles.range_container}`}>
-                            <div className={`${styles.label_container} pl-7`}>
-                                <label htmlFor="">Character Length</label><span className={`${styles.page_theme} ${styles.characterNo} `}>0</span>
+                                <div className={`${styles.label_container} pl-7`}>
+                                    <label htmlFor="">Character Length</label><span className={`${styles.page_theme} ${styles.characterNo} text-3xl pr-7`}>0</span>
+                                </div>
+                                <div className="pl-7">
+                                    <input type="range"
+                                        name="" 
+                                        id=""
+                                        min={10}
+                                        max={15}
+                                        value={passwordGen.length}
+                                        onChange={(e) => setPasswordLength(e.target.value)}
+                                        className={`${styles.slider_color} ${styles.range_input}`}
+                                    />
+                                </div>
                             </div>
-                            <div className="pl-7">
-                                <input type="range"
-                                    name="" 
-                                    id=""
-                                    min={10}
-                                    max={15} 
-                                    value={passwordGen.length}
-                                    onChange={(e) => setPasswordLength(e.target.value)}
-                                    className={`${styles.slider_color} ${styles.range_input}`}
-                                />
+                            <div className="flex flex-col space-y-2 pl-7">
+                            <div className={`${styles.requirement_box} flex items-center`}>
+                                <div>
+                                    <Checkbox 
+                                        value={passwordGen.uppercaseLetters}
+                                        onChange={handleChangeUppercase}
+                                        className="mr-2"
+                                    />
+                                </div>
+                                <div className="pl-4">
+                                    <label htmlFor="">Include Uppercase Letters</label>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col space-y-2 pl-7">
-                        <div className={`${styles.requirement_box} flex items-center`}>
-                            <div>
-                                <Checkbox 
-                                    value={passwordGen.uppercaseLetters}
-                                    onChange={handleChangeUppercase}
-                                    className="mr-2"
-                                />
+
+                            <div className={`${styles.requirement_box} flex items-center`}>
+                                <div>
+                                    <Checkbox 
+                                        value={passwordGen.lowercaseLetters}
+                                        onChange={handleChangeLowercase}
+                                        className="mr-2"
+                                    />
+                                </div>
+                                <div className="pl-4">
+                                    <label htmlFor="">Include Lowercase Letters</label>
+                                </div>
                             </div>
-                            <div className="pl-4">
-                                <label htmlFor="">Include Uppercase Letters</label>
+
+                            <div className={`${styles.requirement_box} flex items-center`}>
+                                <div>
+                                    <Checkbox
+                                        value={passwordGen.numbers}
+                                        onChange={handleChangeNumbers}
+                                        className="mr-2"
+                                    />
+                                </div>
+                                <div className="pl-4">
+                                    <label htmlFor="">Include Numbers</label>
+                                </div>
                             </div>
+
+                            <div className={`${styles.requirement_box} flex items-center`}>
+                                <div>
+                                    <Checkbox
+                                        value={passwordGen.symbols}
+                                        onChange={handleChangeSymbols}
+                                        className="mr-2"
+                                    />
+                                </div>
+                                <div className="pl-4">
+                                    <label htmlFor="">Include Symbols</label>
+                                </div>
+                            </div>
+                            </div>
+                        <div>
+                            <button className={`btn ${styles.generate_btn} justify-center text-center p-3 m-4 pl-4 mb-4`} onClick={handleGeneratePassword}>
+                                GENERATE <span>
+                                    <FiArrowRight />
+                                </span>
+                            </button>
                         </div>
 
-                        <div className={`${styles.requirement_box} flex items-center`}>
-                            <div>
-                                <Checkbox 
-                                    value={passwordGen.lowercaseLetters}
-                                    onChange={handleChangeLowercase}
-                                    className="mr-2"
-                                />
-                            </div>
-                            <div className="pl-4">
-                                <label htmlFor="">Include Lowercase Letters</label>
-                            </div>
-                        </div>
-
-                        <div className={`${styles.requirement_box} flex items-center`}>
-                            <div>
-                                <Checkbox
-                                    value={passwordGen.numbers}
-                                    onChange={handleChangeNumbers}
-                                    className="mr-2"
-                                />
-                            </div>
-                            <div className="pl-4">
-                                <label htmlFor="">Include Numbers</label>
-                            </div>
-                        </div>
-
-                        <div className={`${styles.requirement_box} flex items-center`}>
-                            <div>
-                                <Checkbox
-                                    value={passwordGen.symbols}
-                                    onChange={handleChangeSymbols}
-                                    className="mr-2"
-                                />
-                            </div>
-                            <div className="pl-4">
-                                <label htmlFor="">Include Symbols</label>
-                            </div>
-                        </div>
-                        </div>
-                    <div>
-                        <button className={`btn ${styles.generate_btn} justify-center text-center p-3 m-4`} onClick={handleGeneratePassword}>
-                            GENERATE <span>
-                                <FiArrowRight />
-                            </span>
-                        </button>
                     </div>
+                       
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from "@/app/Styles/styles.module.css";
 
 const CheckBox = (props: any) => {
@@ -6,7 +7,7 @@ const CheckBox = (props: any) => {
 
     return(
         <>
-            <input placeholder="" type="checkbox" checked={value} onChange={onChange} />
+            <input placeholder="" type="checkbox" checked={value} onChange={onChange} className={`${styles.checkbox}`}/>
         </>
     )
 
