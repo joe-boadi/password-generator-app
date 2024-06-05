@@ -1,10 +1,11 @@
 "use client"
 import { FaRegCopy } from "react-icons/fa";
 import styles from  "../Styles/styles.module.css";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Checkbox from "./Checkbox";
 import generatePassword from "../Utils/PasswordGenerator";
 import { FiArrowRight } from "react-icons/fi";
+import PasswordStrengthIndicator from "./PasswordStrength";
 
 const Main = () => {
 
@@ -58,6 +59,10 @@ const Main = () => {
         generatePassword({passwordGen, setHandleText})
       };
 
+      const [ value, setValue ] = useState<number>(10);
+      const handleSliderChange = ( event: ChangeEvent<HTMLInputElement> ) : void => {
+        setValue(parseInt(event.target.value))
+      };
 
     return (
         <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4`}>
@@ -71,7 +76,7 @@ const Main = () => {
                                 placeholder="P4$5W0rD!"
                                 value={handleText}
                                 onChange = {(e) => setHandleText(e.target.value)} 
-                                className={`${styles.input} ${styles.input_text} pl-6 pr-10 left-4`}
+                                className={`${styles.input} ${styles.input_text} pl-6 pr-10 lg:left-4`}
                         />
                         <button
                             type="button"
@@ -86,24 +91,25 @@ const Main = () => {
                                     }, 2000);
                                 }
                                 }}>
-                            <i className={`${styles.input_icon} ${styles.page_theme} text-2xl space-x-2`}><FaRegCopy /> {copied ? 'COPIED' : ''}</i>
+                            <i className={`${styles.input_icon} ${styles.page_theme} text-2xl space-x-2 flex flex-row gap-2 items-center`}>{copied ? 'COPIED' : ''}<FaRegCopy /></i>
                         </button>
                     </div>
 
                     <div className={`${styles.second_container} mb-5`}>
                         <div className={`${styles.requirement_box} ${styles.range_container}`}>
                                 <div className={`${styles.label_container} pl-7`}>
-                                    <label htmlFor="">Character Length</label><span className={`${styles.page_theme} ${styles.characterNo} text-3xl pr-7`}>0</span>
+                                    <div><label htmlFor="">Character Length</label></div>
+                                    <div className={`${styles.page_theme} ${styles.characterNo} text-3xl pr-7 pt-3 mr-4`}>{value}</div>
                                 </div>
                                 <div className="pl-7">
                                     <input type="range"
-                                        name="" 
-                                        id=""
-                                        min={10}
+                                        name="range" 
+                                        id="range"
+                                        min={8}
                                         max={15}
-                                        value={passwordGen.length}
-                                        onChange={(e) => setPasswordLength(e.target.value)}
-                                        className={`${styles.slider_color} ${styles.range_input}`}
+                                        value={value}
+                                        onChange={handleSliderChange}
+                                        className={`${styles.slider_color} ${styles.range_input} bg-green-400 appearance-none`}
                                     />
                                 </div>
                             </div>
@@ -160,8 +166,29 @@ const Main = () => {
                                 </div>
                             </div>
                             </div>
+                                {/* Indicator */}
+                            <div className={`${styles.strength_indicator}`}>
+                                <div className={`mt-3`}>
+                                    <div>
+                                        <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
+                                            <div className="p-7">
+                                                <p className="opacity-50 text-2xl">STRENGTH</p>
+                                            </div>
+                                            <div className="p-7 font-bold">
+                                                <PasswordStrengthIndicator 
+                                                    uppercaseLetters = {passwordGen.uppercaseLetters}
+                                                    lowercaseLetters = {passwordGen.lowercaseLetters}
+                                                    numbers = {passwordGen.numbers}
+                                                    symbols = {passwordGen.symbols}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         <div>
-                            <button className={`btn ${styles.generate_btn} justify-center text-center p-3 m-4 pl-4 mb-4`} onClick={handleGeneratePassword}>
+                            <button className={`btn ${styles.generate_btn} ml-7 mt-6 mb-10 text-center`} onClick={handleGeneratePassword}>
                                 GENERATE <span>
                                     <FiArrowRight />
                                 </span>
