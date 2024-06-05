@@ -1,3 +1,4 @@
+/*GENERAL PAGE THEME AND STYLE*/
 div#root {
     height: 100vh;
     margin: 0;
@@ -45,7 +46,9 @@ div#root {
     opacity: 50%;
 }
 
+/*PASSWORD BOX STYLING*/
 .input{
+    display: flex;
     font-family: "JetBrains Mono", monospace;
     border: none;
     background: #24242C;
@@ -90,6 +93,8 @@ div#root {
     cursor: pointer;
 }
 
+/*RANGE STYLING*/
+
 .range_container {
     display: grid;
     grid-template-columns: 1fr;
@@ -107,6 +112,7 @@ div#root {
     width: 90%;
 }
 
+/*HANDLE RANGE SLIDER*/
 .second_container .requirement_box input[type="range"]::state(webkit-slider-runnable-track) {
     cursor: pointer;
     width: 100%;
@@ -169,13 +175,41 @@ div#root {
       color: #24242C;
   }
   
+  .strength_indicator{
+    background-color: #18171F;
+    width: 476px;
+    height: 72px;
+    margin-left: 28px;
+  }
+
+  .password_strengthIndicator{
+    @apply flex items-center;
+  }
+
+  .too_weak{
+    background-color: #F64A4A;
+  }
+
+  .weak {
+    background-color: #FB7C58;
+  }
+
+  .medium{
+    background-color: #FBCD65;
+  }
+  
+  .strong{
+    background-color: #A4FFAF;
+  }
+
   .generate_btn{
       background-color: #A4FFAF;
       cursor: pointer;
       color: #24242C;;
       width: 476px;
       height: 65px;
-      border-radius: 0;
+      border-radius: 0%;
+      display: flex;
   }
   
   .generate_btn:hover{
@@ -184,13 +218,30 @@ div#root {
       color:#A4FFAF
   }
    
-  @media (max-width: 600px){/*small screens -> 768px*/
 
+  /*BOX RESPONSIVE STYLING WITH MEDIA QUERY*/
+
+  @media (height: 667px) {
+    .generate_btn {
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+
+
+  }
+
+  @media (max-width:768px){/*small screens -> 768px*/
      .container{
-          width: 343px;
+          width: 440px;
           height: 540px;
       }
-  
+
+      .strength_indicator{
+        width: 311px;
+        height: 56px;
+      }
+
       .generate_btn{
           width: 311px;
           height: 56px;
@@ -205,4 +256,38 @@ div#root {
           width: 29px;
           height: 32px;
       }
+  }
+
+  @media (max-height: 850px) {
+        .input {
+            width: 330px;
+        }
+        .strength_indicator {
+            width: 311px;
+            margin-left: 4px;
+        }
+
+        .generate_btn {
+            width: 311px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+  }
+
+  @media (max-height: 900px){
+    .strength_indicator{
+        margin-left: 15px;
+    }
+    .generate_btn{
+        margin-left: 15px;
+    }
+  }
+
+  @media (max-height: 1200px){
+    .strength_indicator{
+        margin-left: 15px;
+    }
+    .generate_btn{
+        margin-left: 15px;
+    }
   }
