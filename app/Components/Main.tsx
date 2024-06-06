@@ -91,7 +91,7 @@ const Main = () => {
                                     }, 2000);
                                 }
                                 }}>
-                            <i className={`${styles.input_icon} ${styles.page_theme} text-2xl space-x-2 flex flex-row gap-2 items-center`}>{copied ? 'COPIED' : ''}<FaRegCopy /></i>
+                            <i className={`${styles.input_icon} ${styles.page_theme} space-x-2 flex flex-row gap-2 items-center`}>{copied ? 'COPIED' : ''} <span className="text-2xl"><FaRegCopy /></span></i>
                         </button>
                     </div>
 
@@ -172,7 +172,7 @@ const Main = () => {
                                     <div>
                                         <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
                                             <div className="p-7">
-                                                <p className="opacity-50 text-2xl">STRENGTH</p>
+                                                <p className="opacity-50">STRENGTH</p>
                                             </div>
                                             <div className="p-7 font-bold">
                                                 <PasswordStrengthIndicator 
