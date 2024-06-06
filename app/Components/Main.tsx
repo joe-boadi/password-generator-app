@@ -172,7 +172,7 @@ const Main = () => {
                                     <div>
                                         <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
                                             <div className="p-7">
-                                                <p className="opacity-50">STRENGTH</p>
+                                                <p className="ml-0 p-0 opacity-50">STRENGTH</p>
                                             </div>
                                             <div className="p-7 font-bold">
                                                 <PasswordStrengthIndicator 
@@ -188,7 +188,7 @@ const Main = () => {
                             </div>
 
                         <div>
-                            <button className={`btn ${styles.generate_btn} ml-7 mt-6 mb-10 text-center`} onClick={handleGeneratePassword}>
+                            <button className={`btn ${styles.generate_btn} text-2xl ml-7 mt-6 mb-10 text-center`} onClick={handleGeneratePassword}>
                                 GENERATE <span>
                                     <FiArrowRight />
                                 </span>
