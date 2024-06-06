@@ -220,17 +220,6 @@ div#root {
    
 
   /*BOX RESPONSIVE STYLING WITH MEDIA QUERY*/
-
-  @media (height: 667px) {
-    .generate_btn {
-        width: 100%;
-        margin: 0px;
-        margin-bottom: 5px;
-    }
-
-
-  }
-
   @media (max-width:768px){/*small screens -> 768px*/
      .container{
           width: 440px;
@@ -256,38 +245,4 @@ div#root {
           width: 29px;
           height: 32px;
       }
-  }
-
-  @media (max-height: 850px) {
-        .input {
-            width: 330px;
-        }
-        .strength_indicator {
-            width: 311px;
-            margin-left: 4px;
-        }
-
-        .generate_btn {
-            width: 311px;
-            margin-left: 8px;
-            margin-right: 8/px;
-        }
-  }
-
-  @media (max-height: 900px){
-    .strength_indicator{
-        margin-left: 15px;
-    }
-    .generate_btn{
-        margin-left: 15px;
-    }
-  }
-
-  @media (max-height: 1200px){
-    .strength_indicator{
-        margin-left: 15px;
-    }
-    .generate_btn{
-        margin-left: 15px;
-    }
   }
