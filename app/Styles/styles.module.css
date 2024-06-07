@@ -220,29 +220,77 @@ div#root {
    
 
   /*BOX RESPONSIVE STYLING WITH MEDIA QUERY*/
-  @media (max-width:768px){/*small screens -> 768px*/
+  @media screen and (max-width:768px) and (max-height:1024px){/*small screens -> 768px*/
+
+    .wrapper{
+        width: 540px;
+        height: 695px;
+    }
+
      .container{
-          width: 440px;
-          height: 540px;
+          width: 540px;
+          height: 632px;
       }
 
-      .strength_indicator{
+      .input{
+        width: 540px;
+        height: 80px;
+    }
+
+    .second_container{
+        width: 540px;
+        height: 528px;
+    }
+  }
+
+  @media screen and (max-width:365px) and (max-height:667px){
+    .wrapper{
+        width: 343px;
+        height: 540px;
+    }
+
+    .container{
+        width: 343px;
+        height: 503px;
+    }
+
+    .input{
+        width: 343px;
+        height: 64px;
+    }
+
+    .range_input{
+        width: 311px;
+        height: 28px;
+    }
+
+    .second_container{
+        width: 343px;
+        height: 423px;
+    }
+
+    .mobile{
+        width: 280px;
+        height: 132px;
+    }
+
+    .strength_indicator{
         width: 311px;
         height: 56px;
-      }
+    }
 
-      .generate_btn{
-          width: 311px;
-          height: 56px;
-      }
-  
-      .input{
-          width: 343px;
-          height: 64px;
-      }
-  
-      .slider_value {
-          width: 29px;
-          height: 32px;
-      }
+    .mob_label{
+        width: 77px;
+        height: 21px;
+    }
+
+    .mobile_indicator{
+        width: 145px;
+        height: 28px;
+    }
+
+    .generate_btn{
+        width: 311px;
+        height: 56px;
+    }
   }

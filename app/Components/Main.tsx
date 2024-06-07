@@ -66,7 +66,7 @@ const Main = () => {
 
     return (
         <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4`}>
-            <h1 className={`${styles.h1_text} text-center justify-center p-3 m-3`}>Password Generator</h1>
+            <h1 className={`${styles.h1_text} text-center justify-center p-2 m-2 text-2xl`}>Password Generator</h1>
             <div className={`${styles.container}`}>
                 <div className={`${styles.password_box}`}>
                     <div className="relative mb-5">
@@ -108,73 +108,73 @@ const Main = () => {
                                         min={8}
                                         max={15}
                                         value={value}
-                                        onChange={handleSliderChange}
+                                        onChange={setPasswordLength}
                                         className={`${styles.slider_color} ${styles.range_input} bg-green-400 appearance-none`}
                                     />
                                 </div>
                             </div>
-                            <div className="flex flex-col space-y-2 pl-7">
-                            <div className={`${styles.requirement_box} flex items-center`}>
-                                <div>
-                                    <Checkbox 
-                                        value={passwordGen.uppercaseLetters}
-                                        onChange={handleChangeUppercase}
-                                        className="mr-2"
-                                    />
+                            <div className={`${styles.mobile} flex flex-col space-y-2 pl-7`}>
+                                <div className={`${styles.requirement_box} flex items-center`}>
+                                    <div>
+                                        <Checkbox 
+                                            value={passwordGen.uppercaseLetters}
+                                            onChange={handleChangeUppercase}
+                                            className="mr-2"
+                                        />
+                                    </div>
+                                    <div className="pl-4">
+                                        <label htmlFor="">Include Uppercase Letters</label>
+                                    </div>
                                 </div>
-                                <div className="pl-4">
-                                    <label htmlFor="">Include Uppercase Letters</label>
-                                </div>
-                            </div>
 
-                            <div className={`${styles.requirement_box} flex items-center`}>
-                                <div>
-                                    <Checkbox 
-                                        value={passwordGen.lowercaseLetters}
-                                        onChange={handleChangeLowercase}
-                                        className="mr-2"
-                                    />
+                                <div className={`${styles.requirement_box} flex items-center`}>
+                                    <div>
+                                        <Checkbox 
+                                            value={passwordGen.lowercaseLetters}
+                                            onChange={handleChangeLowercase}
+                                            className="mr-2"
+                                        />
+                                    </div>
+                                    <div className="pl-4">
+                                        <label htmlFor="">Include Lowercase Letters</label>
+                                    </div>
                                 </div>
-                                <div className="pl-4">
-                                    <label htmlFor="">Include Lowercase Letters</label>
-                                </div>
-                            </div>
 
-                            <div className={`${styles.requirement_box} flex items-center`}>
-                                <div>
-                                    <Checkbox
-                                        value={passwordGen.numbers}
-                                        onChange={handleChangeNumbers}
-                                        className="mr-2"
-                                    />
+                                <div className={`${styles.requirement_box} flex items-center`}>
+                                    <div>
+                                        <Checkbox
+                                            value={passwordGen.numbers}
+                                            onChange={handleChangeNumbers}
+                                            className="mr-2"
+                                        />
+                                    </div>
+                                    <div className="pl-4">
+                                        <label htmlFor="">Include Numbers</label>
+                                    </div>
                                 </div>
-                                <div className="pl-4">
-                                    <label htmlFor="">Include Numbers</label>
-                                </div>
-                            </div>
 
-                            <div className={`${styles.requirement_box} flex items-center`}>
-                                <div>
-                                    <Checkbox
-                                        value={passwordGen.symbols}
-                                        onChange={handleChangeSymbols}
-                                        className="mr-2"
-                                    />
+                                <div className={`${styles.requirement_box} flex items-center`}>
+                                    <div>
+                                        <Checkbox
+                                            value={passwordGen.symbols}
+                                            onChange={handleChangeSymbols}
+                                            className="mr-2"
+                                        />
+                                    </div>
+                                    <div className="pl-4">
+                                        <label htmlFor="">Include Symbols</label>
+                                    </div>
                                 </div>
-                                <div className="pl-4">
-                                    <label htmlFor="">Include Symbols</label>
-                                </div>
-                            </div>
                             </div>
                                 {/* Indicator */}
                             <div className={`${styles.strength_indicator}`}>
                                 <div className={`mt-3`}>
                                     <div>
                                         <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
-                                            <div className="p-7">
-                                                <p className="ml-0 p-0 opacity-50">STRENGTH</p>
+                                            <div className={`4{styles.mob_label} p-7`}>
+                                                <p className="p-0 m-auto opacity-50">STRENGTH</p>
                                             </div>
-                                            <div className="p-7 font-bold">
+                                            <div className={`${styles.mobile_indicator} p-7 font-bold`}>
                                                 <PasswordStrengthIndicator 
                                                     uppercaseLetters = {passwordGen.uppercaseLetters}
                                                     lowercaseLetters = {passwordGen.lowercaseLetters}
