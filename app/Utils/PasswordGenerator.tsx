@@ -12,7 +12,7 @@ interface PasswordGenProps {
 const generatePassword = ({passwordGen, setHandleText}: PasswordGenProps) => {
   
     const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-    const symbolsArray = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+    const symbolsArray = ['~', '!', '@' ,'#', '$', '%' ,'^', '&', '*', '(', ')', '_' ,'+' ,'{', '}', ',', '"', ':', '?', '>' ,'<' , ';', '.' , ','];
 
     const characterCodes = Array.from(Array(26)).map((_e, i) => i + 97);
     const lowerCaseLetters = characterCodes.map((code) =>
@@ -40,6 +40,7 @@ const generatePassword = ({passwordGen, setHandleText}: PasswordGenProps) => {
       ];
 
       const shuffleArray = (array:any) => array.sort(() => Math.random() - 0.5);
+      console.log(shuffleArray)
       const characters = shuffleArray(availableCharacters).slice(0, length);
       setHandleText(characters.join(''));
       return characters;
