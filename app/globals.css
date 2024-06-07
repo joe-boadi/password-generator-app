@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body{
-    margin: 0;
+    margin: auto;
     font-family: "JetBrains Mono", monospace;
     font-weight: 500;
     font-style: normal;

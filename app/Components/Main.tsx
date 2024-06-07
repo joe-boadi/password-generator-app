@@ -64,6 +64,20 @@ const Main = () => {
         setValue(parseInt(event.target.value))
       };
 
+      // background : Default Range Slider Background
+    const sliderProps = {
+        background: "#18171F",
+        fill: "#A4FFAF",
+    };
+
+      const applyFill = (slider: any) => {
+        const percentage = (100 * (slider.value - slider.min)) / (slider.max - slider.min);
+	    const bg = `linear-gradient(90deg, ${sliderProps.fill} ${percentage}%, ${sliderProps.background} ${percentage +
+			0.1}%)`;
+	    slider.style.background = bg;
+	    // sliderValue.setAttribute("data-length", slider.value);
+      }
+
     return (
         <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4`}>
             <h1 className={`${styles.h1_text} text-center justify-center p-2 m-2 text-2xl`}>Password Generator</h1>
@@ -102,14 +116,16 @@ const Main = () => {
                                     <div className={`${styles.page_theme} ${styles.characterNo} text-3xl pr-7 pt-3 mr-4`}>{value}</div>
                                 </div>
                                 <div className="pl-7">
-                                    <input type="range"
+                                    <input 
+                                        type="range"
                                         name="range" 
-                                        id="range"
+                                        id={styles.slider}
                                         min={8}
                                         max={15}
                                         value={value}
-                                        onChange={setPasswordLength}
-                                        className={`${styles.slider_color} ${styles.range_input} bg-green-400 appearance-none`}
+                                        // step={5}
+                                        onChange={handleSliderChange}
+                                        className={`${styles.slider} ${styles.range_input}`}
                                     />
                                 </div>
                             </div>
@@ -171,10 +187,10 @@ const Main = () => {
                                 <div className={`mt-3`}>
                                     <div>
                                         <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
-                                            <div className={`4{styles.mob_label} p-7`}>
-                                                <p className="p-0 m-auto opacity-50">STRENGTH</p>
+                                            <div className={`${styles.mob_label} p-5`}>
+                                                <p className="m-auto opacity-50">STRENGTH</p>
                                             </div>
-                                            <div className={`${styles.mobile_indicator} p-7 font-bold`}>
+                                            <div className={`${styles.mobile_indicator} p-7 text-2xl my-auto`}>
                                                 <PasswordStrengthIndicator 
                                                     uppercaseLetters = {passwordGen.uppercaseLetters}
                                                     lowercaseLetters = {passwordGen.lowercaseLetters}
