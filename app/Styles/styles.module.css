@@ -1,31 +1,33 @@
 /*GENERAL PAGE THEME AND STYLE*/
-html#root {
+html#root, body#root {
     background-color: #18171F;
-    height: 100vh;
     margin: auto;
-    padding: 0;
+    min-height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .wrapper {
-    font-family: "JetBrains Mono", monospace;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
     background-color: #18171F;
     color:#E6E5EA;
     height: 100vh;
-    display: flex;
+    font-family: "JetBrains Mono", monospace;    
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 17px;
+    box-sizing: border-box;
 }
 
 .wrapper_box {
-    padding: 30px;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .container {
     width: 540px;
     height: 632px;
     max-width: 100%;
-    margin: 0 auto;
 }
 
 .second_container{
@@ -283,6 +285,7 @@ input[type="checkbox"]:checked + .checkbox_icon {
     .wrapper{
         width: 540px;
         height: 695px;
+        padding: 1rem;
     }
 
      .container{
@@ -306,6 +309,7 @@ input[type="checkbox"]:checked + .checkbox_icon {
     .wrapper{
         width: 343px;
         height: 540px;
+        padding: 1rem;
     }
 
     .container{
@@ -341,6 +345,7 @@ input[type="checkbox"]:checked + .checkbox_icon {
     .mob_label{
         width: 77px;
         height: 21px;
+        margin: auto;
     }
 
     .mobile_indicator{

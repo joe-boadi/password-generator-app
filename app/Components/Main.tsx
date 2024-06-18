@@ -79,7 +79,7 @@ const Main = () => {
       }
 
     return (
-        <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4`}>
+        <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4 mx-auto`}>
             <h1 className={`${styles.h1_text} text-center justify-center p-2 m-2 text-2xl`}>Password Generator</h1>
             <div className={`${styles.container}`}>
                 <div className={`${styles.password_box}`}>
@@ -95,7 +95,7 @@ const Main = () => {
                         <button
                             type="button"
                             title=""
-                            className={`${styles.input_icon} absolute right-4 top-1/2 transform -translate-y-1/2 px-4 py-2`}
+                            className={`${styles.input_icon} absolute right-0 top-1/2 transform -translate-y-1/2 px-4 py-2`}
                             onClick={() => {
                                 if (handleText.length > 0) {
                                     navigator.clipboard.writeText(handleText);
@@ -185,12 +185,12 @@ const Main = () => {
                                 {/* Indicator */}
                             <div className={`${styles.strength_indicator}`}>
                                 <div className={`mt-3`}>
-                                    <div>
+                                    <div className="mx-auto">
                                         <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
-                                            <div className={`${styles.mob_label} p-5`}>
+                                            <div className={`${styles.mob_label} p-5 mt-2`}>
                                                 <p className="m-auto opacity-50">STRENGTH</p>
                                             </div>
-                                            <div className={`${styles.mobile_indicator} p-7 text-2xl my-auto`}>
+                                            <div className={`${styles.mobile_indicator} mt-2`}>
                                                 <PasswordStrengthIndicator 
                                                     uppercaseLetters = {passwordGen.uppercaseLetters}
                                                     lowercaseLetters = {passwordGen.lowercaseLetters}
