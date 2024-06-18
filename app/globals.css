@@ -3,11 +3,21 @@
 @tailwind utilities;
 
 html, body{
-    margin: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18171F;
     font-family: "JetBrains Mono", monospace;
     font-weight: 500;
-    font-style: normal;
-    background-color: #18171F;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+}
+
+#__next{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
