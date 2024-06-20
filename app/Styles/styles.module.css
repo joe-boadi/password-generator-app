@@ -9,7 +9,6 @@ html#root, body#root {
 
 .wrapper {
     display: flex;
-    padding: 1rem;
     align-items: center;
     background-color: #18171F;
     color:#E6E5EA;
@@ -20,7 +19,7 @@ html#root, body#root {
 }
 
 .wrapper_box {
-    padding: 1rem;
+
     box-sizing: border-box;
 }
 
@@ -96,7 +95,6 @@ html#root, body#root {
 }
 
 /*RANGE STYLING*/
-
 .range_container {
     display: grid;
     grid-template-columns: 1fr;
@@ -164,123 +162,109 @@ input[type="checkbox"]:checked + .checkbox_icon {
     --range-label-width: 60px;
 }
 
-  #slider {
-    --webkit-appearance: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    background: #18171F;
-
-    &::-webkit-slider-thumb{
-        background: #E6E5EA;
-        transition: all 0.15s ease-in-out;
-        opacity: 50%;
-
-        &:hover{
-            transform: scale(1.2);
-            background: #18171F;
-            border: 1px solid #A4FFAF;
-        }
-    }
-
-    &::-moz-range-thumb {
-		border: 0;
-		border-radius: 50%;
-		background: #E6E5EA;
-		cursor: pointer;
-		transition: background 0.15s ease-in-out;
-		&:hover {
-			background: #18171F;
-            border: 1px solid #E6E5EA;
-		}
-	}
-  }
-
+  #slider, 
   .slider_color {
     --webkit-appearance: none;
     outline: none;
     padding: 0;
     margin: 0;
-    background: #A4FFAF;
+    height: 8px;
+    border-radius: 5px;
+    background: #18171F;
+}
 
-    &::-webkit-slider-thumb{
-        background: #A4FFAF;
-        transition: all 0.15s ease-in-out;
-        &:hover{
-            transform: scale(1.2);
-            background: #18171F;
-            border: 2px solid #E6E5EA;
-        }
-    }
-  }
+#slider::-webkit-slider-thumb, 
+.slider_color::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    background: #E6E5EA;
+}
 
-  .slider_icon{
-      background-color: #E6E5EA;
-      cursor: pointer;
-  }
-  
-  .slider_icon:hover{
-      background-color: #24242C;
-      border: 1px solid #A4FFAF;
-  }
-  
-  .checkbox {
+#slider:hover::-webkit-slider-thumb,
+.slider_color:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+    background-color: #18171F;
+    border: 1px solid #A4FFAF;
+}
+
+#slider::-moz-range-thumb,
+.slider_color::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #E6E5EA;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+#slider:hover::-moz-range-thumb,
+.slider_color:hover::-moz-range-thumb {
+  transform: scale(1.2);
+  background: #18171F;
+  border: 1px solid #A4FFAF;
+}
+
+.checkbox {
       border: 1px solid #E6E5EA;
       background-color:#24242C
-  }
+}
 
-  .checkbox:checked {
+.checkbox:checked {
       background-color: #A4FFAF;
       color: #24242C;
-  }
+}
   
-  .strength_indicator{
+.strength_indicator{
     background-color: #18171F;
     width: 476px;
     height: 72px;
     margin-left: 28px;
-  }
+}
 
-  .password_strengthIndicator{
+.password_strengthIndicator{
     @apply flex items-center;
-  }
+}
 
-  .too_weak{
+.too_weak{
     background-color: #F64A4A;
-  }
+}
 
-  .weak {
+.weak {
     background-color: #FB7C58;
-  }
+}
 
-  .medium{
+.medium{
     background-color: #FBCD65;
-  }
+}
   
-  .strong{
+.strong{
     background-color: #A4FFAF;
-  }
+}
 
-  .generate_btn{
-      background-color: #A4FFAF;
-      cursor: pointer;
-      color: #24242C;;
-      width: 476px;
-      height: 65px;
-      border: none;
-      border-radius: 0%;
-      display: flex;
-  }
+.generate_btn{
+    background-color: #A4FFAF;
+    cursor: pointer;
+    color: #24242C;;
+    width: 476px;
+    height: 65px;
+    border: none;
+    border-radius: 0%;
+    display: flex;
+}
   
-  .generate_btn:hover{
-      background-color: #24242C;
-      border: 1px solid #A4FFAF;
-      color:#A4FFAF
-  }
+.generate_btn:hover{
+    background-color: #24242C;
+    border: 1px solid #A4FFAF;
+    color:#A4FFAF
+}
    
 
   /*BOX RESPONSIVE STYLING WITH MEDIA QUERY*/
-  @media screen and (max-width:768px) and (max-height:1024px){
+@media screen and (max-width:768px) and (max-height:1024px){
     /* TABLET */
     .wrapper{
         width: 540px;
