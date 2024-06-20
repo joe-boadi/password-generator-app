@@ -1,3 +1,4 @@
+
 interface PasswordGenProps {
     passwordGen: {
       length: number;
@@ -9,7 +10,8 @@ interface PasswordGenProps {
     setHandleText: (text: string) => void;
   }
 
-const generatePassword = ({passwordGen, setHandleText}: PasswordGenProps) => {
+
+  const generatePassword = ({passwordGen, setHandleText}: PasswordGenProps) => {
   
     const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     const symbolsArray = ['~', '!', '@' ,'#', '$', '%' ,'^', '&', '*', '(', ')', '_' ,'+' ,'{', '}', ',', '"', ':', '?', '>' ,'<' , ';', '.' , ','];
