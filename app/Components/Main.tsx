@@ -1,7 +1,7 @@
 "use client"
 import { FaRegCopy } from "react-icons/fa";
 import styles from  "../Styles/styles.module.css";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
 import generatePassword from "../Utils/PasswordGenerator";
 import { FiArrowRight } from "react-icons/fi";
@@ -48,12 +48,12 @@ const Main = () => {
         });
       };
     
-      const setPasswordLength = (val: any) => {
-        setPasswordGen({
-          ...passwordGen,
-          length: val,
-        });
-      };
+    //   const setPasswordLength = (val: any) => {
+    //     setPasswordGen({
+    //       ...passwordGen,
+    //       length: val,
+    //     });
+    //   };
 
       const handleGeneratePassword = () => {
         generatePassword({passwordGen, setHandleText})
@@ -61,7 +61,12 @@ const Main = () => {
 
       const [ value, setValue ] = useState<number>(10);
       const handleSliderChange = ( event: ChangeEvent<HTMLInputElement> ) : void => {
-        setValue(parseInt(event.target.value))
+        let newLength = parseInt(event.target.value) 
+        setValue(newLength)
+        setPasswordGen({
+            ...passwordGen,
+            length: newLength,
+          });
       };
 
       // background : Default Range Slider Background
@@ -75,17 +80,24 @@ const Main = () => {
 	    const bg = `linear-gradient(90deg, ${sliderProps.fill} ${percentage}%, ${sliderProps.background} ${percentage +
 			0.1}%)`;
 	    slider.style.background = bg;
-	    // sliderValue.setAttribute("data-length", slider.value);
       }
 
+      useEffect(() => {
+        const slider = document.getElementById(styles.slider) as HTMLInputElement;
+        if (slider) {
+          applyFill(slider);
+        }
+      }, [value]);
+
     return (
-        <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4 mx-auto`}>
+        <div className={`${styles.wrapper} ${styles.wrapper_box} mb-4 mx-auto md:flex`}>
             <h1 className={`${styles.h1_text} text-center justify-center p-2 m-2 text-2xl`}>Password Generator</h1>
             <div className={`${styles.container}`}>
                 <div className={`${styles.password_box}`}>
                     <div className="relative mb-5">
                         <input 
                                 type="text"
+                                readOnly
                                 autoComplete="off"
                                 placeholder="P4$5W0rD!"
                                 value={handleText}
