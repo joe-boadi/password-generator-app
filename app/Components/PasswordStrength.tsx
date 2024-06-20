@@ -65,12 +65,12 @@ const PasswordStrengthIndicator = ({
 
     return (
         <div className={`flex items-center mr-3 gap-3 ${styles.password_strengthIndicator} ${styles.Strength_indicator}`}>
-            <div className="opacity-70 m-auto text-2xl">{getStrengthIndicatorLabel()}</div>
+            <div className="opacity-70 m-auto text-2xl sm:text-sm/3">{getStrengthIndicatorLabel()}</div>
             <div className="flex items-center gap-1 pl-3 m-auto">
-                <div className={`${getStrengthIndicatorColor(1)} h-6 w-2 border`}></div>
-                <div className={`${getStrengthIndicatorColor(2)} h-6 w-2 border`}></div>
-                <div className={`${getStrengthIndicatorColor(3)} h-6 w-2 border`}></div>
-                <div className={`${getStrengthIndicatorColor(4)} h-6 w-2 border`}></div>
+                <div className={`${getStrengthIndicatorColor(1)} w-2 border h-6`}></div>
+                <div className={`${getStrengthIndicatorColor(2)} w-2 border h-6`}></div>
+                <div className={`${getStrengthIndicatorColor(3)} w-2 border h-6`}></div>
+                <div className={`${getStrengthIndicatorColor(4)} w-2 border h-6`}></div>
             </div>
         </div>
     );
