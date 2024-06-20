@@ -176,8 +176,8 @@ input[type="checkbox"]:checked + .checkbox_icon {
 #slider::-webkit-slider-thumb, 
 .slider_color::-webkit-slider-thumb{
     -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
@@ -193,8 +193,8 @@ input[type="checkbox"]:checked + .checkbox_icon {
 
 #slider::-moz-range-thumb,
 .slider_color::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: #E6E5EA;
   cursor: pointer;
@@ -223,10 +223,6 @@ input[type="checkbox"]:checked + .checkbox_icon {
     width: 476px;
     height: 72px;
     margin-left: 28px;
-}
-
-.password_strengthIndicator{
-    @apply flex items-center;
 }
 
 .too_weak{
