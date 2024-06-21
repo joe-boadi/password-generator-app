@@ -336,6 +336,7 @@ input[type="checkbox"]:checked + .checkbox_icon {
         height: auto;
         margin:auto;
         font-size: small;
+        gap: 2;
     }
 
     .generate_btn{

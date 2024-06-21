@@ -90,9 +90,9 @@ const Main = () => {
       }, [value]);
 
     return (
-       <div className="min-h-screen flex flex-col justify-center items-center bg-[#18171F]">
-         <div className={`${styles.wrapper} ${styles.wrapper_box}`}>
-            <div className={`container mx-auto max-w-full px-4 sm:px-6 lg:px-8 ${styles.container}`}>
+       <div className="min-h-screen flex flex-col justify-center items-center w-screen bg-[#18171F]">
+         <div className={`${styles.wrapper} ${styles.wrapper_box} w-screen min-h-screen`}>
+            <div className={`container mx-auto max-w-full px-4 sm:px-6 lg:px-8 min-h-screen w-screen ${styles.container}`}>
                 <div className="flex flex-col items-center mb-6">
                     <h1 className={`${styles.h1_text} text-center justify-center p-2 m-2 text-2xl`}>Password Generator</h1>
                     <div className={`${styles.password_box}`}>
@@ -201,8 +201,8 @@ const Main = () => {
                                     <div className={`mt-3`}>
                                         <div className="mx-auto">
                                             <div className="flex mx-auto h-16 flex-row items-center justify-between ml-6 mr-6">
-                                                <div className={`${styles.mob_label} p-5 mt-2`}>
-                                                    <p className=" block m-auto opacity-50">STRENGTH</p>
+                                                <div className={`${styles.mob_label} mt-2`}>
+                                                    <p className="block md:text-sm m-auto opacity-50 md:size-3">STRENGTH</p>
                                                 </div>
                                                 <div className={`${styles.mobile_indicator} mt-2`}>
                                                     <PasswordStrengthIndicator 
