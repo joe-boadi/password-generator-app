@@ -7,11 +7,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens : {
+    screens: {
       sm: "480px",
       md: "768px",
       lg: "976px",
-      xl: "1440px"
+      xl: "1440px",
     },
     extend: {
       backgroundImage: {
@@ -23,4 +23,5 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
 };
+
 export default config;
