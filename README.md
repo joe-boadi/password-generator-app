@@ -29,15 +29,6 @@ A basic knowledge in [React](https://react.dev) can help get you started with Ne
 
 - Styled with [daisyui](https://daisyui.com), a Tailwind CSS component library.
 
-## Get the codes locally
-
-> - Requirement: Ensure you have [nodejs](https://nodejs.org) installed.
-> - To [contribute](https://docs.github.com/en/get-started), ``fork`` the repo, create a new branch, apply changes on ``new-branch`` and make a [pull request](https://docs.github.com/en/pull-requests).
-
-- Download the zip file and make it your own; by changing the UI.
-- Once downloaded unzip the folder.
-- Launch and ``npm run build/start`` in the terminal.
-- Run ``npm run dev`` and go to "localhost:3000" or the local host available.
 
 ## How to Download and Run the Password Generator App Locally
 
