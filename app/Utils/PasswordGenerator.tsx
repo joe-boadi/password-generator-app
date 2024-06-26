@@ -7,7 +7,7 @@ interface PasswordGenProps {
       numbers: boolean;
       symbols: boolean;
     };
-    
+
     setHandleText: (text: string) => void;
   }
 
