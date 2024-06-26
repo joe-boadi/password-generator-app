@@ -7,6 +7,7 @@ interface PasswordGenProps {
       numbers: boolean;
       symbols: boolean;
     };
+    
     setHandleText: (text: string) => void;
   }
 
@@ -14,7 +15,10 @@ interface PasswordGenProps {
   const generatePassword = ({passwordGen, setHandleText}: PasswordGenProps) => {
   
     const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-    const symbolsArray = ['~', '!', '@' ,'#', '$', '%' ,'^', '&', '*', '(', ')', '_' ,'+' ,'{', '}', ',', '"', ':', '?', '>' ,'<' , ';', '.' , ','];
+    const symbolsArray = ['~', '!', '@' ,'#', '$', '%' ,'^', '&', 
+                          '*', '(', ')', '_' ,'+' ,
+                          '{', '}', ',', '"', ':', '?', '>' ,'<' , ';', '.' , ','
+                          ];
 
     const characterCodes = Array.from(Array(26)).map((_e, i) => i + 97);
     const lowerCaseLetters = characterCodes.map((code) =>
