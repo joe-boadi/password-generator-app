@@ -87,7 +87,7 @@ const Main = () => {
         if (slider) {
           applyFill(slider);
         }
-      }, [value]);
+      });
 
     return (
        <div className="min-h-screen flex flex-col justify-center items-center w-screen bg-[#18171F]">
