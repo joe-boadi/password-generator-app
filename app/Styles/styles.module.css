@@ -4,6 +4,7 @@ html#root, body#root {
     margin: auto;
     padding: 1rem;
     box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .wrapper {
