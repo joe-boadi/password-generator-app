@@ -26,7 +26,6 @@ html#root, body#root {
     height: auto;
     max-width: 540px;
     max-height: 632px;
-    max-width: 100%;
 }
 
 .second_container{
@@ -87,6 +86,7 @@ html#root, body#root {
     display: flex;
     padding: 10px 0px;
     margin: 2px;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .requirement_box label{
