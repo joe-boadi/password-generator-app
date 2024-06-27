@@ -47,13 +47,6 @@ const Main = () => {
           symbols: !passwordGen.symbols,
         });
       };
-    
-    //   const setPasswordLength = (val: any) => {
-    //     setPasswordGen({
-    //       ...passwordGen,
-    //       length: val,
-    //     });
-    //   };
 
       const handleGeneratePassword = () => {
         generatePassword({passwordGen, setHandleText})
