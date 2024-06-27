@@ -12,7 +12,7 @@ html#root, body#root {
     align-items: center;
     background-color: #18171F;
     color:#E6E5EA;
-    border: solid 1px tomato;
+    /* border: solid 1px tomato; */
     height: 100%;
     /* height: 100vh; */
     /* font-family: "JetBrains Mono", monospace;     */
